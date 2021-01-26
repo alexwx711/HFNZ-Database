@@ -73,7 +73,7 @@ In addition to the tables, I have made forms so that the user of the application
         c)	After the graph has been generated, the user can re-choose the group-by method, like switching from Monthly to Quarterly.
 
 3.	Sales Management
-      •	Customer Management: 
+      • Customer Management: 
         a)	View the customer info after searching by either customer ID (currently 1-3 for testing) or customer name.
         b)	After search, the user can edit or delete the displayed customer.
         c)	With a click on the “Add” button, the user can add a new customer to the database. 
