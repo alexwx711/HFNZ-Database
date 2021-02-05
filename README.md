@@ -71,7 +71,7 @@ In addition to the tables, I have made forms so that the user of the application
     •	Production Management
     
         a)	view all or filtered batches that have been produced.
-        b)	With a click on the add button, the user can add a new batch to the database. After saving the new batch, the user is required to add ingredients (raw materials with         purchasing order ID) to the batch. 
+        b)	With a click on the add button, the user can add a new batch to the database. After saving the new batch, the user is required to add ingredients (raw materials with purchasing order ID) to the batch. 
         c)	With a click on the batch number, the user can view the information about the raw materials used to produce this batch.
         d)	With a click on the “Add Ingredient” button, the user can add ingredients that was used to produce the selected batch.
         e)	With a click on the batch number displayed in the subform, the user can update or delete the selected ingredient.
@@ -106,6 +106,7 @@ In addition to the tables, I have made forms so that the user of the application
         c)	After the graph has been generated, the user can re-choose the group-by method, like switching from Monthly to Quarterly.
 
 4.	Tracing
+
       •	Tracing from production end
       
         a)	When a batch number is selected, the application will pull out all sales orders with customer names that contain products produced in this batch.
