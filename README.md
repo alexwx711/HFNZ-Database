@@ -7,8 +7,7 @@ By the end of the previous semester which ended in November 2020, I have studied
 Before launching the project, I had spent some time studying relational database and some basic vba programming within Microsoft Access. 
 So literally, this is my first ever projecct that I completely did on my own. Any comment or advice is definitely welcomed and thanks in advance.
 
-I would like to thank Claudia Wu and the owner of the business for the trust and for giving me the opportunity to attempt the project. It has been a wonderful experience and
-I have gained a lot throughout the process.
+I would like to thank Claudia Wu and the owners of the business, Terry Robinson and Anthony, for the trust and for giving me the opportunity to attempt the project. It has been a wonderful and fruitful experience from which I have gained a lot.
 
 # Background
 The food production facility desires to have a system which can be used to track the supply,the production and the sales when a recall is needed. Below is the requirements that I got from them:
@@ -31,7 +30,7 @@ The requirement under the food act is that in the event of a health alert/breakd
 Tracing needs to be to batch level and will usually be ringfenced by the date manufactured however this may be further batch separated if any of the ingredients (or process) were different. (brand, packet, operator).
 
 # Design
-Claudia Wu, the upperclasswoman who hooked me up with the project, suggested me to use Microsoft Access because the user interfaces will allow the users to manage the database through forms and reports. 
+Claudia Wu, the upperclasswoman who introduced me to the project, suggested me to use Microsoft Access because the user interfaces will allow the users to manage the database through forms and reports. 
 
 Based on the requirements provided by the owner, I have built the following tables in the database: 
   1. tblProducts: ProductID; ProductName
