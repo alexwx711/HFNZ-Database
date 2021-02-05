@@ -31,7 +31,7 @@ The requirement under the food act is that in the event of a health alert/breakd
 Tracing needs to be to batch level and will usually be ringfenced by the date manufactured however this may be further batch separated if any of the ingredients (or process) were different. (brand, packet, operator).
 
 # Design
-Claudia Wu, the upperclasswomen who hooked me up with the project, suggested me to use Microsoft Access because the user interfaces will allow the users to manage the database through forms and reports. 
+Claudia Wu, the upperclasswoman who hooked me up with the project, suggested me to use Microsoft Access because the user interfaces will allow the users to manage the database through forms and reports. 
 
 Based on the requirements provided by the owner, I have built the following tables in the database: 
   1. tblProducts: ProductID; ProductName
@@ -44,23 +44,32 @@ Based on the requirements provided by the owner, I have built the following tabl
   8. tblOrders: OrderID; CustomerID; OrderDate; Comments; StatusID
   9. tblOrderItems (a table that records what are contained in each sales order): OrderItemID; OrderID; BatchNumber; Quantity
   10.tblStatus: StatusID; Description
+  11.tblEmployees: EmployeeID; Name; PositionID; Username; Password
+  12.tblPositions: PositionID; Postion
+  13.tblTemp1&tblTemp2: temporary table that are used when generating reports for selected time intervals
   The joint relationships among the tables can be viewed in the application, under the database tab. 
   
 In addition to the tables, I have made forms so that the user of the application can easily manipulate the database. The following describes the forms and the functions: 
  
  1.	Supply Management
+ 
     •	Supplier Management: 
+    
         a)	View the supplier info after searching by either supplier ID (currently 1-3 for testing) or supplier name.
-        b)	After search, the user can update/delete the existing supplier.
+        b)	After search, the user can update the existing supplier.
         c)	With a click on the “Add” button, the user can add a new supplier to the database.
+        
     • Purchasing Order Management: 
+    
         a)	Filter the purchasing order based on selected criteria.
-        b)	With a click on the displayed “Purchasing Order ID”, the user can update or delete the purchasing order. 
+        b)	With a click on the displayed “Purchasing Order ID”, the user can update/delete the purchasing order. 
         c)	With a click on the “Add” button, the user can add a new purchasing order to the database.
     •	Brief inventory record of each raw material displayed on the footer of the form.
 
 2.	Production Management
+
     •	Production Management
+    
         a)	view all or filtered batches that have been produced.
         b)	With a click on the add button, the user can add a new batch to the database. After saving the new batch, the user is required to add ingredients (raw materials with         purchasing order ID) to the batch. 
         c)	With a click on the batch number, the user can view the information about the raw materials used to produce this batch.
@@ -68,34 +77,44 @@ In addition to the tables, I have made forms so that the user of the application
         e)	With a click on the batch number displayed in the subform, the user can update or delete the selected ingredient.
         f)	With a click on the “Print” button, the user can either print or save a pdf file for the selected batch.
     •	Production Reporting
+    
         a)	The user can view a clustered bar graph of the sales after selecting the time interval and how the graph is displayed (by month, by quarter and by year).
         b)	When the graph has been generated, the right-hand side part of the form will display a total count of sales of each product within selected time interval.
         c)	After the graph has been generated, the user can re-choose the group-by method, like switching from Monthly to Quarterly.
 
 3.	Sales Management
+
       • Customer Management: 
+      
         a)	View the customer info after searching by either customer ID (currently 1-3 for testing) or customer name.
         b)	After search, the user can edit or delete the displayed customer.
         c)	With a click on the “Add” button, the user can add a new customer to the database. 
+        
       •	Sales Management: 
+      
         a)	view all or filtered orders that have been made by customers.
         b)	With a click on the “Add” button, the suer can add a new order to the database. After saving the new order, the user is required to add items (Products with batch number and with quantity) to the order.
         c)	With a click on the order ID, the user can view detailed information about this order, including order items and their associated batch. 
         d)	With a click on the “Add an Order Item” button, the user can add items to the selected order.
         e)	With a click on the order item id in the subform, the user can update or delete the selected order item. 
         f)	With a click on the “Order Summary” button, the user can view a detailed report for the selected order.
+        
       •	Sales Reporting
+      
         a)	The user can view a cluster bar graph of the sales after selecting the time interval and how the graph is displayed (by month, by quarter and by year).
         b)	When the graph has been generated, the right-hand side part of the form will display a total count of sales of each product within selected time interval.
         c)	After the graph has been generated, the user can re-choose the group-by method, like switching from Monthly to Quarterly.
 
 4.	Tracing
       •	Tracing from production end
+      
         a)	When a batch number is selected, the application will pull out all sales orders with customer names that contain products produced in this batch.
-        b)	After tracing, the “Notify Customers” will be visible. With a click on it, the system will automatically open an Outlook email in which the filtered customers will be the recipients. The user then can edit the email body before sending the recall information to the customers.
+        b)	After tracing, the “Notify Customers” button will be visible. With a click on it, the system will automatically open an Outlook email in which the filtered customers will be the recipients. The user then can edit the email body before sending the recall information to the customers.
+        
       •	Tracing from supply end
+      
         a)	When a purchasing order is selected, the application will pull out all sales orders with customer names that include products which were produced with the materials supplied in the selected purchasing order.
-        b)	After tracing, the “Notify Customers” will be visible. With a click on it, the system will automatically open an Outlook email in which the filtered customers will be the recipients. The user then can edit the email body before sending the recall information to the customers.
+        b)	After tracing, the “Notify Customers” button will be visible. With a click on it, the system will automatically open an Outlook email in which the filtered customers will be the recipients. The user then can edit the email body before sending the recall information to the customers.
 
   
 
